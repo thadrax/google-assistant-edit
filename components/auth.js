@@ -73,7 +73,7 @@ function Auth(config) {
     if (!oauthCode) process.exit(-1);
 
     // get our tokens to save
-    oauthClient.getToken(oauthCode, (error, tkns) => {
+    oauthClient.getToken(decodeURIComponent(oauthCode), (error, tkns) => {
       // if we have an error, print it and kill the process
       if (error) {
         console.error('Error getting tokens:', error.response.data);
